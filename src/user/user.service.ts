@@ -10,9 +10,11 @@ export class UserService {
                 id: userId, 
             },
             select: {
-                id: true,
                 name: true,
                 email: true,
+                avatar: true,
+                role: true,
+                createdAt: true,
             },
         }).then(user => {
             if (!user) {

@@ -31,11 +31,14 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
                 update: {
                     name: name.givenName + " " + (name.familyName || ''),
                     email: emails[0].value,
+                    avatar: picture,
                 },
                 create: {
                     name: name.givenName + " " + (name.familyName || ''),
                     email: emails[0].value,
                     role: 'USER',
+                    avatar: picture,
+                    googleId: profile.id, 
                 },
                 select: {
                     id: true,
